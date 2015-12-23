@@ -17,6 +17,13 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" <?php body_class(); ?> dir="<?php if (is_rtl()) echo "rtl"; else echo "ltr"; ?>">
+
+<div id="mobilebgfix">
+  <div class="mobile-bg-fix-img-wrap">
+    <div class="mobile-bg-fix-img"></div>
+  </div>
+  <div class="mobile-bg-fix-whole-site">
+
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'parallax-one' ); ?></a>
 	<!-- =========================
      PRE LOADER       
@@ -94,7 +101,7 @@
 
 								echo '<a href="'.esc_url( home_url( '/' ) ).'" class="navbar-brand" title="'.get_bloginfo('title').'">';
 
-									echo '<img src="'.esc_url($parallax_one).'" alt="'.get_bloginfo('title').'">';
+									echo '<img src="'.parallax_one_make_protocol_relative_url(esc_url($parallax_one)).'" alt="'.get_bloginfo('title').'">';
 
 								echo '</a>';
 

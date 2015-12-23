@@ -1,12 +1,7 @@
-
 <?php
 /**
- * The main template file.
+ * The template for displaying archive pages.
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
  * @package parallax-one
@@ -20,13 +15,21 @@
 </header>
 <!-- /END HOME / HEADER  -->
 
-<div role="main" id="content" class="content-warp">
+<div class="content-wrap">
 	<div class="container">
-		<div id="primary" class="content-area col-md-8 post-list">
+
+		<div id="primary" class="content-area col-md-12">
 			<main <?php if(have_posts()) echo 'itemscope itemtype="http://schema.org/Blog"'; ?> id="main" class="site-main" role="main">
 
 				<?php if ( have_posts() ) : ?>
-				
+
+					<header class="page-header">
+						<?php
+							the_archive_title( '<h1 class="page-title">', '</h1>' );
+							the_archive_description( '<div class="taxonomy-description">', '</div>' );
+						?>
+					</header><!-- .page-header -->
+					
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 
@@ -35,11 +38,11 @@
 							 * If you want to override this in a child theme, then include a file
 							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 							 */
-							get_template_part( 'content', get_post_format() );
+							get_template_part( 'content', 'archive-download' );
 						?>
 
 					<?php endwhile; ?>
-
+					
 					<?php the_posts_navigation(); ?>
 
 				<?php else : ?>
@@ -51,9 +54,8 @@
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-		<?php get_sidebar(); ?>
-
 	</div>
 </div><!-- .content-wrap -->
 
 <?php get_footer(); ?>
+

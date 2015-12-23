@@ -1,7 +1,9 @@
-<?php 
-/*
-Template Name: Contact
-*/
+<?php
+/**
+ * The template for displaying all single posts.
+ *
+ * @package parallax-one
+ */
 
 	get_header(); 
 ?>
@@ -15,11 +17,11 @@ Template Name: Contact
 	<div class="container">
 
 		<div id="primary" class="content-area col-md-12">
-			<main id="main" class="site-main" role="main">
+			<main itemscope itemtype="http://schema.org/WebPageElement" itemprop="mainContentOfPage" id="main" class="site-main" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'contact' ); ?>
+				<?php get_template_part( 'content', 'single-download' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
@@ -30,3 +32,4 @@ Template Name: Contact
 </div><!-- .content-wrap -->
 
 <?php get_footer(); ?>
+

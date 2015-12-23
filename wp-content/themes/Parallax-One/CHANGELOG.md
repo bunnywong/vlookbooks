@@ -1,5 +1,61 @@
 
 
+### 2.1.0.3 - 03/12/2015
+
+ Changes: 
+
+
+ * #322 - added control for overlay opacity in first section
+ * #311 - line break in textbox is now interpreted as new line
+ * #307 - use relative url for images
+ * Merge branch 'cristian-ungureanu-development' into development
+
+
+### 2.1.0.2 - 27/11/2015
+
+ Changes: 
+
+
+ * Merge pull request #330 from cristian-ungureanu/development
+
+Development
+ * EDD Compatibility issues
+
+
+### 2.1.0.1 - 24/11/2015
+
+ Changes: 
+
+
+ * #316 Change date format issue fixed
+ * Merge pull request #324 from Gouravwp/development
+
+#316 Change date format issue fixed
+ * date format issue fixed
+
+change date format .
+ * date format issue fixed
+
+Change date format
+ * Merge branch 'Gouravwp-development' into development
+ * #326 Wrong text domain issue
+
+text domain issue fixed !
+ * Merge pull request #327 from Gouravwp/development
+
+#326 Wrong text domain issue
+
+
+### 2.1.0.0 - 11/11/2015
+
+ Changes: 
+
+
+ * Fixed #291 Date appears twice on blog on moibile
+ * Fixed #320 Background image not working well
+ * Fixed Background image not working well on mobile
+
+
 ### 2.0.9 - 29/10/2015
 
  Changes: 
