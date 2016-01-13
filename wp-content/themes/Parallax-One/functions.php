@@ -887,5 +887,10 @@ add_action('rest_api_init', function(){
     register_rest_route( 'v1/user', '/(?P<id>\d+)', array(
         'methods' => 'GET',
         'callback' => 'get_all_user_meta',
+       'args' => array(
+          'id' => array(
+            'validate_callback' => 'is_numeric'
+          ),
+        ),
     ));
 });
