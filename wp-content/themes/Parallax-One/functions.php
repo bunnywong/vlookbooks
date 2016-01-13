@@ -864,6 +864,12 @@ add_filter( 'stylesheet_directory_uri', 'parallax_one_stylesheet_directory_uri',
 // ================================================================================
 /* Custom */
 
+/**
+ * Grab user info by user ID
+ *
+ * @param array $data Options for the function.
+ * @return json|null
+ */
 function get_all_user_meta( $data ) {
   $all_user_meta = get_user_meta($data['id']);
   $result['id'] = $data['id'];
