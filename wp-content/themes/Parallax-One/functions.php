@@ -860,3 +860,32 @@ function parallax_one_stylesheet_directory_uri( $stylesheet_dir_uri, $stylesheet
 	return parallax_one_make_protocol_relative_url( $stylesheet_dir_uri );
 }
 add_filter( 'stylesheet_directory_uri', 'parallax_one_stylesheet_directory_uri', 10, 3 );
+
+// ================================================================================
+/* Custom */
+
+function get_all_user_meta( $data ) {
+  $all_user_meta = get_user_meta($data['id']);
+  // $result = $all_user_meta; //@debug
+
+  $user_detail = array('gender', 'height', 'weight', 'date_of_birth');
+  $user_body = array('neck', 'shoulder_length', 'chest', 'waist', 'hips', 'arm_length');
+
+  // Feed into result.
+  $result['id'] = $data['id'];
+  foreach($user_detail as $key) {
+    $result[$key] = implode($all_user_meta[$key]);
+  }
+  foreach($user_body as $key) {
+    $result[$key] = implode($all_user_meta[$key]);
+  }
+
+  return $result;
+}
+
+add_action('rest_api_init', function(){
+    register_rest_route( 'v1/user', '/(?P<id>\d+)', array(
+        'methods' => 'GET',
+        'callback' => 'get_all_user_meta',
+    ));
+});
