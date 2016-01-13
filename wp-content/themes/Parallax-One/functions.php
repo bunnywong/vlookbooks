@@ -866,16 +866,14 @@ add_filter( 'stylesheet_directory_uri', 'parallax_one_stylesheet_directory_uri',
 
 function get_all_user_meta( $data ) {
   $all_user_meta = get_user_meta($data['id']);
-  // $result = $all_user_meta; //@debug
+  $result['id'] = $data['id'];
 
   $user_detail = array('gender', 'height', 'weight', 'date_of_birth');
-  $user_body = array('neck', 'shoulder_length', 'chest', 'waist', 'hips', 'arm_length');
-
-  // Feed into result.
-  $result['id'] = $data['id'];
   foreach($user_detail as $key) {
     $result[$key] = implode($all_user_meta[$key]);
   }
+
+  $user_body = array('neck', 'shoulder_length', 'chest', 'waist', 'hips', 'arm_length');
   foreach($user_body as $key) {
     $result[$key] = implode($all_user_meta[$key]);
   }
