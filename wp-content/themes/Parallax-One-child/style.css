@@ -11,7 +11,83 @@
  Tags:         black, blue, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
  Text Domain:  parallax-one-child
 */
-.navbar-inverse {
-  background-color: white;
-  border: none;
+.db {
+  border: 1px solid red;
+}
+.db1 {
+  border: 1px solid orange;
+}
+.db2 {
+  background: pink;
+}
+body.page-template-template-home {
+  color: white;
+  background-image: url(/wp-content/uploads/2016/01/fall-fashion-clothing-with-fall-fashion-foto-trends-men-2014-2015-fashion-trends-2014-2015-13.jpg);
+  background-size: cover;
+}
+body.page-template-template-home a {
+  color: white;
+}
+body.page-template-template-home footer {
+  display: none;
+}
+.container-fluid.custom-header {
+  color: white;
+  background: rgba(0, 0, 0, 0.75);
+  height: 60px;
+  position: relative;
+}
+.container-fluid.custom-header > * {
+  display: inline-block;
+}
+.container-fluid.custom-header .menu {
+  min-width: 100px;
+}
+.container-fluid.custom-header .menu button.navbar-toggle {
+  margin-top: 10px;
+  margin-right: 0px;
+  display: block;
+  float: left;
+}
+.container-fluid.custom-header .menu button.navbar-toggle .icon-bar {
+  border: 1px solid white;
+}
+.container-fluid.custom-header .menu a {
+  margin-top: 17px;
+  display: block;
+}
+.container-fluid.custom-header h1 {
+  position: absolute;
+  left: 40%;
+  margin: 0px auto;
+  margin-top: 10px;
+  float: none;
+  font-weight: 200;
+}
+.container-fluid.custom-header .signin {
+  margin-top: 20px;
+  float: right;
+}
+.container-fluid.custom-header .signin a {
+  padding: 10px 20px;
+  border: 1px solid white;
+  color: white;
+  background: black;
+}
+.side-menu {
+  background: rgba(0, 0, 0, 0.75);
+  width: 300px;
+  max-width: 300px;
+  height: 100%;
+  position: absolute;
+}
+.side-menu .menu {
+  padding: 10px;
+}
+header {
+  background-attachment: scroll!important;
+  display: none;
+}
+header button.menu-toggle {
+  float: left;
 }
