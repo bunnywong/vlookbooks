@@ -24,6 +24,12 @@ var vlookbooks = {
       }
     });
 
-
-  }
+    // Slider
+    $('.bx-wrapper-container a').each(function() {
+      var l = $(this).attr('href');
+      if (l = 'http://www.wonderplugin.com/wordpress-carousel/') {
+        $(this).hide();
+      }
+    })
+  },
 }

@@ -53,45 +53,6 @@
 				?>
 
 			<?php endwhile; // end of the loop. ?>
-      <div class="bx-wrapper-container">
-        <?php
-          $html = '';
-          $html .= '<div class="sliders">';
-
-          for ($i= 0; $i < 6; $i++) {
-            $image = get_field('home_image_' . $i);
-            if (!empty($image)) {
-              // vars
-              $url = $image['url'];
-              $title = $image['title'];
-              $alt = $image['alt'];
-              $caption = $image['caption'];
-              $size = 'medium'; // e.g. thumbnail
-              $thumb = $image['sizes'][ $size ];
-              $width = $image['sizes'][ $size . '-width' ];
-              $height = $image['sizes'][ $size . '-height' ];
-
-              // if ($caption) {
-              //   $html .= '<div class="wp-caption">';
-              // }
-
-              $html .= '<div class="slide">';
-              // $html .=   '<a href="' . $url . '" title="' . $title . '">';
-              $html .=     '<img src="' . $thumb . '" alt="' . $alt . '" width="' . $width .'" height="' .  $height . '" />';
-              // $html .=   '</a>';
-              $html .= '</div>';
-
-              // if ($caption) {
-              //   $html .= '<p class="wp-caption-text">' . $caption . '</p>';
-              //   $html .= '</div>';
-              // }
-            }
-          }
-
-          $html .= '<div/>';
-          // echo $html; // ***
-        ?>
-      </div>
 
 			</main><!-- #main -->
 		</div><!-- #primary -->
@@ -99,6 +60,10 @@
 	</div>
 </div><!-- .content-wrap -->
 
+<div class="slider-container">
+  <h3 class="text-center">Start Exploring</h3>
+  <?php kw_sc_logo_carousel('home'); ?>
+</div>
 
 <!-- jQuery library (served from Google) -->
 <!--
@@ -112,16 +77,5 @@
   jQuery(document).ready(function() {
     vlookbooks.home();
   });
-
-  // $(document).ready(function(){
-  //   $('.sliders').bxSlider({
-  //     slideWidth: 200,
-  //     minSlides: 2,
-  //     maxSlides: 5,
-  //     moveSlides: 5,
-  //     slideMargin: 10,
-  //     pager: false,
-  //   });
-  // });
 </script>
 <?php get_footer(); ?>
