@@ -20,6 +20,24 @@
 .db2 {
   background: pink;
 }
+.tb {
+  background: rgba(0, 0, 0, 0.75);
+}
+.tb2 {
+  background: rgba(255, 255, 255, 0.75);
+}
+.modal {
+  background: rgba(255, 255, 255, 0.75);
+}
+.modal {
+  color: black;
+}
+.modal .modal-content {
+  background: lightgray;
+}
+.modal .modal-content a {
+  color: blue;
+}
 body.page-template-template-home {
   color: white;
   background-image: url(/wp-content/uploads/2016/01/fall-fashion-clothing-with-fall-fashion-foto-trends-men-2014-2015-fashion-trends-2014-2015-13.jpg);
@@ -34,12 +52,25 @@ body.page-template-template-home a {
 body.page-template-template-home .slider-container {
   background: rgba(0, 0, 0, 0.75);
   padding-top: 0px;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
+  bottom: -20px;
+  position: relative;
 }
 body.page-template-template-home .slider-container h3 {
   padding-top: 10px;
   font-weight: 200;
   font-size: 1.5em;
+}
+body.page-template-template-home .slider-container .bx-wrapper .bx-viewport {
+  box-shadow: none;
+  background: transparent;
+  border-color: transparent;
+}
+body.page-template-template-home .slider-container .bx-wrapper .bx-viewport li {
+  background: white;
+}
+body.page-template-template-home .slider-container .bx-wrapper .bx-viewport li .helper img {
+  padding: 0px!important;
 }
 body.page-template-template-home footer {
   display: none;
@@ -78,7 +109,7 @@ body.page-template-template-home footer {
   font-weight: 200;
 }
 .container-fluid.custom-header .signin {
-  margin-top: 20px;
+  margin-top: 10px;
   float: right;
 }
 .container-fluid.custom-header .signin a {

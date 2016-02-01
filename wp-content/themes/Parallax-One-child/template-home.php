@@ -20,17 +20,18 @@
       </button>
     <span><a href="#" class="js-menu-io">Menu</a></span>
   </div>
-  <h1 class="title">VLOOKBOOKS.COM</h1>
+  <h1>VLOOKBOOKS.COM</h1>
   <div class="signin">
-    <a href="">Sign in</a>
+    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Sign in</a>
   </div>
+
 </div>
 <div class="side-menu js-side-menu hidden">
   <div class="menu">
-    <a href="">About</a>
+    <a href="/about">About</a>
   </div>
   <div class="menu">
-    <a href="">Contact</a>
+    <a href="/contact">Contact</a>
   </div>
 </div>
 <!-- /END HOME / HEADER  -->
@@ -79,3 +80,14 @@
   });
 </script>
 <?php get_footer(); ?>
+<!-- Large modal -->
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-center">
+      <div>Sign up</div>
+      <div>Email</div>
+      <div>Already signed up? <a href="login">Log in</a></div>
+      <div>Forgot your password? Reset password</div>
+    </div>
+  </div>
+</div>

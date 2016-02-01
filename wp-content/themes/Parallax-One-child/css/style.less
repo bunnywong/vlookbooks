@@ -22,6 +22,26 @@
   background: pink;
 }
 
+// transparent background
+.tb {
+  background: rgba(0,0,0,0.75);
+}
+.tb2 {
+ background: rgba(255,255,255,0.75);
+}
+.modal {
+  .tb2;
+}
+
+.modal {
+  color: black;
+  .modal-content {
+    background: lightgray;
+    a {
+      color: blue;
+    }
+  }
+}
 
 body.page-template-template-home {
   header {
@@ -35,13 +55,30 @@ body.page-template-template-home {
   background-size: cover;
 
   .slider-container {
-    background: rgba(0,0,0,0.75);
+    .tb;
     padding-top: 0px;
-    padding-bottom: 20px;
+    padding-bottom: 15px;
+    bottom: -20px;
+    position: relative;
     h3 {
       padding-top: 10px;
       font-weight: 200;
       font-size: 1.5em;
+    }
+    .bx-wrapper {
+      .bx-viewport {
+        box-shadow: none;
+        background: transparent;
+        border-color: transparent;
+        li {
+          background: white;
+          .helper {
+            img {
+              padding: 0px!important;
+            }
+          }
+        }
+      }
     }
   }
   footer {
@@ -51,7 +88,7 @@ body.page-template-template-home {
 
 .container-fluid.custom-header {
   color: white;
-  background: rgba(0,0,0,0.75);
+  .tb;
   height: 60px;
   position: relative;
   @base: 20px;
@@ -83,7 +120,7 @@ body.page-template-template-home {
     font-weight: 200;
   }
   .signin {
-    margin-top: @base;
+    margin-top: 10px;
     float: right;
     a {
       padding: 10px 20px;
@@ -94,7 +131,7 @@ body.page-template-template-home {
   }
 }
 .side-menu {
-  background: rgba(0,0,0,0.75);
+  .tb;
   width: 300px;
   height: 100%;
   position: absolute;
