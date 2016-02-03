@@ -32,6 +32,11 @@
 .modal {
   .tb2;
 }
+.hover {
+  &:hover {
+    opacity: .5;
+  }
+}
 
 .modal {
   color: black;
@@ -40,6 +45,27 @@
     a {
       color: blue;
     }
+  }
+}
+.modal-signup {
+  .modal-dialog {
+    margin-top: 100px;
+  }
+  .modal-content > div {
+    margin-top: 20px;
+  }
+  .form-wrapper {
+    #insert_user {
+      margin-top: 10px;
+    }
+    input {
+      margin-top: 10px;
+      max-width: 200px;
+    }
+  }
+  .footer {
+    margin-top: 20px;
+    padding-top: 0px;
   }
 }
 
@@ -119,16 +145,25 @@ body.page-template-template-home {
     float: none;
     font-weight: 200;
   }
-  .signin {
+  .account {
     margin-top: 10px;
     float: right;
     a {
-      padding: 10px 20px;
-      border: 1px solid white;
       color: white;
+      padding: 10px 20px;
+      .hover;
+    }
+    &.login a {
+      border: 1px solid transparent;
+      background: transparent;
+
+    }
+    &.signup a {
+      border: 1px solid white;
       background: black;
     }
   }
+
 }
 .side-menu {
   .tb;

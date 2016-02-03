@@ -21,8 +21,12 @@
     <span><a href="#" class="js-menu-io">Menu</a></span>
   </div>
   <h1>VLOOKBOOKS.COM</h1>
-  <div class="signin">
-    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Sign in</a>
+
+  <div class="signup account">
+    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".modal-signup">Sign up</a>
+  </div>
+  <div class="login account">
+    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".modal-login">Log in</a>
   </div>
 
 </div>
@@ -80,14 +84,28 @@
   });
 </script>
 <?php get_footer(); ?>
-<!-- Large modal -->
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog modal-lg">
+
+<div class="modal fade modal-login" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-sm">
     <div class="modal-content text-center">
-      <div>Sign up</div>
-      <div>Email</div>
-      <div>Already signed up? <a href="login">Log in</a></div>
-      <div>Forgot your password? Reset password</div>
+      <div>Log in</div>
+      <div><?php echo do_shortcode(' [user-meta-profile form="login"]'); ?></div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade modal-signup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content text-center">
+      <h3>Sign up</h3>
+      <div class="form-wrapper">
+        <div><?php echo do_shortcode('[user-meta-registration form="login"]'); ?></div>
+      </div>
+      <div class="footer">
+        <div>Already signed up? <a href="login">Log in</a></div>
+        <div>Forgot your password? Reset password</div>
+      </div>
+
     </div>
   </div>
 </div>

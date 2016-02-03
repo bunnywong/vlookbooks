@@ -29,6 +29,9 @@
 .modal {
   background: rgba(255, 255, 255, 0.75);
 }
+.hover:hover {
+  opacity: .5;
+}
 .modal {
   color: black;
 }
@@ -37,6 +40,23 @@
 }
 .modal .modal-content a {
   color: blue;
+}
+.modal-signup .modal-dialog {
+  margin-top: 100px;
+}
+.modal-signup .modal-content > div {
+  margin-top: 20px;
+}
+.modal-signup .form-wrapper #insert_user {
+  margin-top: 10px;
+}
+.modal-signup .form-wrapper input {
+  margin-top: 10px;
+  max-width: 200px;
+}
+.modal-signup .footer {
+  margin-top: 20px;
+  padding-top: 0px;
 }
 body.page-template-template-home {
   color: white;
@@ -108,14 +128,23 @@ body.page-template-template-home footer {
   float: none;
   font-weight: 200;
 }
-.container-fluid.custom-header .signin {
+.container-fluid.custom-header .account {
   margin-top: 10px;
   float: right;
 }
-.container-fluid.custom-header .signin a {
-  padding: 10px 20px;
-  border: 1px solid white;
+.container-fluid.custom-header .account a {
   color: white;
+  padding: 10px 20px;
+}
+.container-fluid.custom-header .account a:hover {
+  opacity: .5;
+}
+.container-fluid.custom-header .account.login a {
+  border: 1px solid transparent;
+  background: transparent;
+}
+.container-fluid.custom-header .account.signup a {
+  border: 1px solid white;
   background: black;
 }
 .side-menu {
