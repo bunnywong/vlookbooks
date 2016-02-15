@@ -89,7 +89,7 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content text-center">
       <div>Log in</div>
-      <div><?php echo do_shortcode(' [user-meta-profile form="login"]'); ?></div>
+      <div><?php echo do_shortcode('[login_widget title="Login Here"]'); ?></div>
     </div>
   </div>
 </div>
