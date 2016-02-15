@@ -41,6 +41,12 @@
 .modal .modal-content a {
   color: blue;
 }
+#login input[type="text"] {
+  float: right;
+}
+.um_field_container label {
+  min-width: 70px;
+}
 .modal-signup .modal-dialog {
   margin-top: 100px;
 }

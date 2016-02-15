@@ -26,7 +26,7 @@
     <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".modal-signup">Sign up</a>
   </div>
   <div class="login account">
-    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".modal-login">Log in</a>
+    <a href="#" class="btn btn-primary js-login" data-toggle="modal" data-target=".modal-login">Log in</a>
   </div>
 
 </div>
@@ -80,6 +80,7 @@
 <link href="//cdnjs.cloudflare.com/ajax/libs/bxslider/4.1.2/jquery.bxslider.css" rel="stylesheet" />
 <script>
   jQuery(document).ready(function() {
+    vlookbooks.global();
     vlookbooks.home();
   });
 </script>
@@ -88,8 +89,7 @@
 <div class="modal fade modal-login" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content text-center">
-      <div>Log in</div>
-      <div><?php echo do_shortcode('[login_widget title="Login Here"]'); ?></div>
+      <div><?php echo do_shortcode('[login_widget title="Log in"]'); ?></div>
     </div>
   </div>
 </div>
@@ -99,7 +99,7 @@
     <div class="modal-content text-center">
       <h3>Sign up</h3>
       <div class="form-wrapper">
-        <div><?php echo do_shortcode('[user-meta-registration form="login"]'); ?></div>
+        <div><?php echo do_shortcode('[user-meta-registration form="signup"]'); ?></div>
       </div>
       <div class="footer">
         <div>Already signed up? <a href="login">Log in</a></div>

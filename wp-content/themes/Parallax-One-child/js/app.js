@@ -2,7 +2,8 @@ $ = jQuery;
 
 var vlookbooks = {
   init: function() {
-    this.home();
+    // this.home();
+    // this.global();
   },
   home: function() {
     var $menu = $('.js-side-menu');
@@ -30,6 +31,27 @@ var vlookbooks = {
       if (l = 'http://www.wonderplugin.com/wordpress-carousel/') {
         $(this).hide();
       }
-    })
+    });
+
+    // Modal
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').focus()
+    });
   },
+  global: function() {
+    // Rename Label
+    $("#login label[for='username']").text('Email');
+
+    // Login rewrite
+    if ($('a[title="Logout"]').length) {
+      // Rename "Log in:
+      $('.js-login')
+        .text('Logout')
+        .on('click', function() {
+          window.location = $('a[title="Logout"]').attr('href');
+        });
+
+    }
+
+  }
 }
