@@ -42,6 +42,7 @@ var vlookbooks = {
     // Rename Label
     $("#login label[for='username']").text('Email');
 
+    // Close current modal
     $('.js-login-redirect').on('click', function() {
       $('.modal-signup').modal('hide');
     });
