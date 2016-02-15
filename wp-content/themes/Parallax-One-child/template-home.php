@@ -105,7 +105,7 @@
 <div class="modal fade modal-signup" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
   <div class="modal-dialog modal-sm">
     <div class="modal-content text-center">
-      <h3>Sign up</h3>
+      <h2>Sign up</h2>
       <div class="form-wrapper">
         <div><?php echo do_shortcode('[user-meta-registration form="signup"]'); ?></div>
       </div>

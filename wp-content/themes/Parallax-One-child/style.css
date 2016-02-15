@@ -50,8 +50,11 @@
 .modal-dialog {
   margin-top: 100px;
 }
-.modal-signup .modal-content > div {
-  margin-top: 20px;
+.modal-dialog h2 {
+  margin-bottom: 20px;
+}
+.modal-signup .form-wrapper {
+  margin-top: -10px;
 }
 .modal-signup .form-wrapper #insert_user {
   margin-top: 10px;
