@@ -22,7 +22,7 @@
   </div>
   <h1>VLOOKBOOKS.COM</h1>
 
-  <div class="signup account">
+  <div class="signup account js-signup">
     <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".modal-signup">Sign up</a>
   </div>
   <div class="login account">
@@ -102,7 +102,7 @@
         <div><?php echo do_shortcode('[user-meta-registration form="signup"]'); ?></div>
       </div>
       <div class="footer">
-        <div>Already signed up? <a href="login">Log in</a></div>
+        <div>Already signed up? <a href="login" class="js-login-redirect" data-toggle="modal" data-target=".modal-login">Log in</a></div>
         <div>Forgot your password? Reset password</div>
       </div>
 

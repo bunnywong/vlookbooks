@@ -42,8 +42,13 @@ var vlookbooks = {
     // Rename Label
     $("#login label[for='username']").text('Email');
 
+    $('.js-login-redirect').on('click', function() {
+      $('.modal-signup').modal('hide');
+    });
+
     // Login rewrite
     if ($('a[title="Logout"]').length) {
+      $('.js-signup').remove();
       // Rename "Log in:
       $('.js-login')
         .text('Logout')
