@@ -32,6 +32,14 @@
 .hover:hover {
   opacity: .5;
 }
+input[type="submit"] {
+  background: black;
+  border: 1px solid white;
+}
+input[type="submit"]:hover {
+  opacity: .75;
+  background: black;
+}
 .modal {
   color: black;
 }
