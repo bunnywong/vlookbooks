@@ -6,6 +6,42 @@ var vlookbooks = {
     // this.global();
   },
   home: function() {
+    // Slider
+    $('.bx-wrapper-container a').each(function() {
+      var l = $(this).attr('href');
+      if (l = 'http://www.wonderplugin.com/wordpress-carousel/') {
+        $(this).hide();
+      }
+    });
+
+    // Modal
+    $('#myModal').on('shown.bs.modal', function () {
+      $('#myInput').focus()
+    });
+  },
+  global: function() {
+    this.nav();
+    // Rename Label
+    $("#login label[for='username']").text('Email');
+
+    // Close current modal
+    $('.js-login-redirect').on('click', function() {
+      $('.modal-signup').modal('hide');
+    });
+
+    // Login rewrite
+    if ($('a[title="Logout"]').length) {
+      $('.js-signup').remove();
+      // Rename "Log in:
+      $('.js-login')
+        .text('Logout')
+        .on('click', function() {
+          window.location = $('a[title="Logout"]').attr('href');
+        });
+    }
+  },
+  nav: function() {
+    // Nav
     var $menu = $('.js-side-menu');
     $('.js-menu-io').on('click', function() {
       // Show menu
@@ -24,40 +60,5 @@ var vlookbooks = {
         $menu.addClass('hidden').slideUp('slow');
       }
     });
-
-    // Slider
-    $('.bx-wrapper-container a').each(function() {
-      var l = $(this).attr('href');
-      if (l = 'http://www.wonderplugin.com/wordpress-carousel/') {
-        $(this).hide();
-      }
-    });
-
-    // Modal
-    $('#myModal').on('shown.bs.modal', function () {
-      $('#myInput').focus()
-    });
-  },
-  global: function() {
-    // Rename Label
-    $("#login label[for='username']").text('Email');
-
-    // Close current modal
-    $('.js-login-redirect').on('click', function() {
-      $('.modal-signup').modal('hide');
-    });
-
-    // Login rewrite
-    if ($('a[title="Logout"]').length) {
-      $('.js-signup').remove();
-      // Rename "Log in:
-      $('.js-login')
-        .text('Logout')
-        .on('click', function() {
-          window.location = $('a[title="Logout"]').attr('href');
-        });
-
-    }
-
   }
 }
