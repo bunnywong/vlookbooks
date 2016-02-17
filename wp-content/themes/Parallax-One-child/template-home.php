@@ -48,7 +48,7 @@
 
 <script>
   jQuery(document).ready(function() {
-    vlookbooks.global();
+    vlookbooks.init();
     vlookbooks.home();
   });
 </script>
