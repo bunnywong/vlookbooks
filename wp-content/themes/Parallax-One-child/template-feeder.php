@@ -6,6 +6,7 @@
  */
 
   get_header('global');
+  get_header('feeder');
 ?>
 
 <div class="content-wrap">
@@ -13,19 +14,7 @@
 
     <div id="primary" class="content-area col-md-12">
       <main id="main" class="site-main" role="main">
-
-      <?php while ( have_posts() ) : the_post(); ?>
-
-        <?php get_template_part( 'content', 'page' ); ?>
-
-        <?php
-          // If comments are open or we have at least one comment, load up the comment template
-          if ( comments_open() || get_comments_number() ) :
-            comments_template();
-          endif;
-        ?>
-
-      <?php endwhile; // end of the loop. ?>
+      <?php echo do_shortcode('[ajax_load_more post_type="post" posts_per_page="5" button_loading_label="loading ..." css_classes="my-container"]'); ?>
 
       </main><!-- #main -->
     </div><!-- #primary -->
