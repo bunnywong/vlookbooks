@@ -11,6 +11,10 @@
  Tags:         black, blue, gray, white, light, responsive-layout, one-column, two-columns, right-sidebar, custom-background, custom-colors, custom-menu, featured-images, front-page-post-form, full-width-template, rtl-language-support, threaded-comments, translation-ready, accessibility-ready
  Text Domain:  parallax-one-child
 */
+header,
+footer {
+  display: none;
+}
 .db {
   border: 1px solid red;
 }
@@ -19,9 +23,6 @@
 }
 .db2 {
   background: pink;
-}
-.tb {
-  background: rgba(0, 0, 0, 0.75);
 }
 .tb2 {
   background: rgba(255, 255, 255, 0.75);
@@ -49,7 +50,7 @@ input[type="submit"]:hover {
 .modal .modal-content a {
   color: blue;
 }
-#login input[type="text"] {
+#login input[type="email"] {
   float: right;
 }
 .um_field_container label {
@@ -80,14 +81,11 @@ body.page-template-template-home {
   background-image: url(/wp-content/uploads/2016/01/fall-fashion-clothing-with-fall-fashion-foto-trends-men-2014-2015-fashion-trends-2014-2015-13.jpg);
   background-size: cover;
 }
-body.page-template-template-home header {
-  display: none;
-}
 body.page-template-template-home a {
   color: white;
 }
 body.page-template-template-home .slider-container {
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.5);
   padding-top: 0px;
   padding-bottom: 15px;
   bottom: -20px;
@@ -109,12 +107,9 @@ body.page-template-template-home .slider-container .bx-wrapper .bx-viewport li {
 body.page-template-template-home .slider-container .bx-wrapper .bx-viewport li .helper img {
   padding: 0px!important;
 }
-body.page-template-template-home footer {
-  display: none;
-}
 .container-fluid.custom-header {
   color: white;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.5);
   height: 60px;
   position: relative;
 }
@@ -136,6 +131,7 @@ body.page-template-template-home footer {
 .container-fluid.custom-header .menu a {
   margin-top: 17px;
   display: block;
+  color: white;
 }
 .container-fluid.custom-header h1 {
   position: absolute;
@@ -164,12 +160,73 @@ body.page-template-template-home footer {
   border: 1px solid white;
   background: black;
 }
-.side-menu {
+.custom-header.feeder {
   background: rgba(0, 0, 0, 0.75);
+}
+.custom-header.feeder .menu-item {
+  padding: 20px;
+}
+.custom-header.feeder .menu-item a {
+  color: white;
+}
+.side-menu {
+  background: rgba(0, 0, 0, 0.5);
   width: 300px;
   height: 100%;
   position: absolute;
+  z-index: 1;
 }
 .side-menu .menu {
   padding: 10px;
+}
+body.page-template-template-feeder #main .alm-listing .item-wrapper {
+  margin-bottom: 80px;
+  margin-bottom: 10px;
+  width: 300px;
+  float: left;
+  display: inline-block;
+  box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+  border: 1px solid lightgray;
+}
+body.page-template-template-feeder #main .alm-listing .item-wrapper img {
+  float: right;
+  margin-bottom: 10px;
+}
+body.page-template-template-feeder #main .alm-listing .item-wrapper .info {
+  padding: 10px;
+  background: #3dc1bd!important;
+  min-height: 50px;
+}
+body.page-template-template-feeder #main .alm-listing .item-wrapper .info .author {
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+body.page-template-template-feeder #main .alm-listing .item-wrapper .content {
+  padding: 10px;
+}
+body.page-template-template-feeder #main .saic-wrapper {
+  background: #3dc1bd;
+}
+body.page-template-template-feeder #main .saic-wrapper,
+body.page-template-template-feeder #main .saic-wrapper .saic-commenter-name,
+body.page-template-template-feeder #main .saic-wrapper a {
+  color: black!important;
+}
+body.page-template-template-feeder #main .alm-btn-wrap {
+  clear: both;
+}
+body.page-template-template-feeder #main .alm-btn-wrap #load-more {
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  background: white!important;
+  clear: both;
+  color: gray;
+  opacity: 1;
+  text-indent: 0px;
+  cursor: pointer!important;
+  border: 1px solid lightgray!important;
+  background-image: none;
 }

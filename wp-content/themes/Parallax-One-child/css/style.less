@@ -12,6 +12,13 @@
  Text Domain:  parallax-one-child
 */
 
+// Temp
+header,
+footer {
+    display: none;
+  }
+// ================================================================================
+
 .db {
   border: 1px solid red;
 }
@@ -22,9 +29,13 @@
   background: pink;
 }
 
+// ================================================================================
 // transparent background
-.tb {
-  background: rgba(0,0,0,0.75);
+.tb() {
+  background: rgba(0,0,0,0.5);
+}
+.tb2(@unit) {
+  background: rgba(0,0,0, @unit);
 }
 .tb2 {
  background: rgba(255,255,255,0.75);
@@ -58,7 +69,7 @@ input[type="submit"] {
 }
 
 // Align: Log in
-#login input[type="text"] {
+#login input[type="email"] {
   float: right;
 }
 // Align: Sign up
@@ -90,9 +101,6 @@ input[type="submit"] {
 }
 
 body.page-template-template-home {
-  header {
-    display: none;
-  }
   a {
     color: white;
   }
@@ -101,7 +109,7 @@ body.page-template-template-home {
   background-size: cover;
 
   .slider-container {
-    .tb;
+    .tb2(0.5);
     padding-top: 0px;
     padding-bottom: 15px;
     bottom: -20px;
@@ -127,14 +135,10 @@ body.page-template-template-home {
       }
     }
   }
-  footer {
-    display: none;
-  }
 }
-
 .container-fluid.custom-header {
   color: white;
-  .tb;
+  .tb2(0.5);
   height: 60px;
   position: relative;
   @base: 20px;
@@ -155,6 +159,7 @@ body.page-template-template-home {
     a {
       margin-top: 17px;
       display: block;
+      color: white;
     }
   }
   h1 {
@@ -183,16 +188,81 @@ body.page-template-template-home {
       background: black;
     }
   }
-
+}
+.custom-header.feeder {
+  background: rgba(0, 0, 0, 0.75);
+  .menu-item {
+    padding: 20px;
+    a {
+      color: white;
+    }
+  }
 }
 .side-menu {
-  .tb;
+  .tb2(0.5);
   width: 300px;
   height: 100%;
   position: absolute;
+  z-index: 1;
   .menu {
     padding: 10px;
   }
 }
+body.page-template-template-feeder {
+  #main {
+    .alm-listing {
+      .item-wrapper {
+        margin-bottom: 80px; // @debug
+        margin-bottom: 10px; // @debug ON
+        width: 300px;
+        float: left;
+        display: inline-block;
+        box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+        border: 1px solid lightgray;
+        img {
+          float: right;
+          margin-bottom: 10px;
+        }
+        .info {
+          padding: 10px;
+          background: #3dc1bd!important;
+          min-height: 50px;
+          .author {
+            float: left;
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+          }
+        }
+        .content {
+          padding: 10px;
+        }
+      }
+    }
+    // FB style comment
+    .saic-wrapper {
+      background: #3dc1bd;
+      &, .saic-commenter-name, a {
+        color: black!important;
+      }
+    }
+    .alm-btn-wrap {
+      clear: both;
+      #load-more {
+        position: fixed;
+        left: 0px;
+        bottom: 0px;
+        background: white!important;
 
+        clear: both;
+        color: gray;
+        opacity: 1;
+        text-indent: 0px;
+        cursor: pointer!important;
+        border: 1px solid lightgray!important;
+        background-image: none;
+      }
+    }
+  }
+}
 
