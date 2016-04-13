@@ -10,6 +10,26 @@ var vlookbooks = {
   feeder: function() {
 
   },
+  profile: function() {
+    $('body').addClass('profile');
+
+    // Alter plug-ing: Alter input attr
+    $('.number')
+      .attr('type','number')
+      .attr('min','0');
+
+    //  Alter Plug-ing: Remove `0` result for number type <input>
+    $('form').submit(function() {
+      $('form input[type="number"]').each(function() {
+        if ($(this).val() == 0) {
+          $(this).val('');
+        }
+      });
+    });
+
+    // Alter Plug-in: Avatar photo
+    $('form.wpua-edit #submit').val('update');
+  },
   nav: function() {
     this.sideMenu();
     this.modal();

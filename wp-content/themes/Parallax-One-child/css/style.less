@@ -206,8 +206,13 @@ body.page-template-template-home {
   z-index: 1;
   .menu {
     padding: 10px;
+    a {
+      color: white;
+    }
   }
 }
+
+/* Page: Feeder */
 body.page-template-template-feeder {
   #main {
     .alm-listing {
@@ -269,3 +274,69 @@ body.page-template-template-feeder {
   }
 }
 
+/* Page: Profile */
+body.profile {
+  .pf_success {
+    background: #EEE;
+    border: none;
+    width: auto;
+    text-align: center;
+  }
+  input[type="submit"] {
+    // display: none;
+  }
+  // Hide first Ajax result msg box
+  #um_form_userdetail .pf_ajax_result {
+    // display: none;
+  }
+
+  .um_field_container label {
+    max-width: 120px;
+  }
+  .block-left {
+    border: 1px solid lightgray;
+    padding-bottom: 10px;
+  }
+  .block-middle img {
+    width: 100%;
+  }
+  .block-right {
+    border: 1px solid lightgray;
+    padding-bottom: 20px;
+  }
+  .block-bottom {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    border: 1px solid lightgray;
+    .idea {
+      color: white;
+      background: black;
+      padding: 20px 10px;
+    }
+  }
+  .main.block {
+
+  }
+}
+
+
+// Profile > Avatar
+#wpua-edit-attachment-existing a, // edit image
+.wpua-edit-container h3,
+#wpua-undo-button-existing,
+#wpua-thumbnail-existing,
+#wpua-preview-existing span {
+  display: none!important;
+}
+button#wpua-upload-existing,
+button#wpua-remove-existing {
+  color: black;
+  background: #EEE;
+  border: 1px solid lightgray;
+}
+#wpua-allowed-files-existing code {
+  color: black;
+}
+#wpua-file-existing {
+  margin-bottom: 10px;
+}
