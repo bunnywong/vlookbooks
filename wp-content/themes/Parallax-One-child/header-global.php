@@ -20,7 +20,7 @@
           </button>
         <span><a href="#" class="js-menu-io">Menu</a></span>
       </div>
-      <h1>VLOOKBOOKS.COM</h1>
+      <h1><a href="/home">VLOOKBOOKS.COM</a></h1>
 
       <div class="signup account js-signup">
         <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".modal-signup">Sign up</a>
