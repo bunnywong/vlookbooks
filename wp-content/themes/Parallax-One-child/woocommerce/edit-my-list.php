@@ -24,6 +24,10 @@ if ( $wl_owner != WC_Wishlists_User::get_wishlist_key() && !current_user_can( 'm
 endif;
 ?>
 
+<?php
+  get_header('global');
+  get_header('feeder');
+  ?>
 <?php do_action( 'woocommerce_wishlists_before_wrapper' ); ?>
 <div id="wl-wrapper" class="product woocommerce"> <!-- product class so woocommerce stuff gets applied in tabs -->
 
