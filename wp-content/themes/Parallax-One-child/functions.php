@@ -1,8 +1,18 @@
 <?php
-
   /**
    * Child theme init
    */
+
+  function vd($var) {
+    echo '<pre>';
+    echo var_dump($var);
+    echo '</pre>';
+  }
+
+  function compare_order($a, $b) {
+    return $a['category'] - $b['category'];
+  }
+
   function theme_enqueue_styles() {
     $parent_style = 'parent-style';
     wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );

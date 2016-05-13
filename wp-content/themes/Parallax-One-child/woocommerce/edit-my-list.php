@@ -108,7 +108,34 @@ endif;
 						</table>
 					</div><!-- wl-row wl-clear -->
 
-					<table class="shop_table cart wl-table manage" cellspacing="0">
+          <?php
+            // My Custom ***
+            $new_product = array();
+            foreach ( $wishlist_items as $wishlist_item_key => $item ) {
+              $_product = $item['data'];
+              if ( $_product->exists() && $item['quantity'] > 0 ) {
+                $product_cats = wp_get_post_terms( $item['product_id'], 'product_cat' );
+
+                // Add `category` into current array.
+                $item['category'] = $product_cats[0]->name;
+
+                // Clone item into new array.
+                $new_item[] = $item;
+              }
+            }
+
+            // Sort bu nested inside.
+            usort($new_item, 'compare_order');
+
+            // Show available wishlist items.
+            foreach ( $new_item as $key => $item ) {
+              $_product = $item['data'];
+              // printf($item['category']); //@DEBUG
+              printf( '<a href="%s" class="thumb">%s</a>', esc_url( get_permalink( apply_filters( 'woocommerce_in_cart_product_id', $item['product_id'] ) ) ), $_product->get_image() );
+            }
+          ?>
+
+					<table class="shop_table cart wl-table manage dn" cellspacing="0">
 						<thead>
 							<tr>
 								<th class="check-column"><input type="checkbox" name="" value="" /></th>
@@ -282,19 +309,19 @@ endif;
 					<?php echo WC_Wishlists_Plugin::action_field( 'edit-list' ); ?>
 					<?php echo WC_Wishlists_Plugin::nonce_field( 'edit-list' ); ?>
 
-<!-- <p class="form-row">
-<strong>What kind of list is this?<abbr class="required" title="required">*</abbr></strong>
-            <table class="wl-rad-table">
-                    <tr>
-                            <td><input type="radio" name="wishlist_type" id="rad_wishlist" value="wishlist" checked="checked"></td>
-                            <td><label for="rad_wishlist">Wishlist <span class="wl-small">- Allows you to add products to a list for later.</span></label></td>
-                    </tr>
-                    <tr>
-                            <td><input type="radio" name="wishlist_type" id="rad_reg" value="registry"></td>
-                            <td><label for="rad_reg">Registry <span class="wl-small">- Registries allow you to request a specific number of items and users can purchase items which will update the list for others to know what has been purchased.</span></label></td>
-                    </tr>
-            </table>
-</p> -->
+          <p class="form-row">
+          <strong>What kind of list is this?<abbr class="required" title="required">*</abbr></strong>
+              <table class="wl-rad-table">
+                      <tr>
+                              <td><input type="radio" name="wishlist_type" id="rad_wishlist" value="wishlist" checked="checked"></td>
+                              <td><label for="rad_wishlist">Wishlist <span class="wl-small">- Allows you to add products to a list for later.</span></label></td>
+                      </tr>
+                      <tr>
+                              <td><input type="radio" name="wishlist_type" id="rad_reg" value="registry"></td>
+                              <td><label for="rad_reg">Registry <span class="wl-small">- Registries allow you to request a specific number of items and users can purchase items which will update the list for others to know what has been purchased.</span></label></td>
+                      </tr>
+              </table>
+          </p>
 					<p class="form-row form-row-wide">
 						<label for="wishlist_title"><?php _e( 'Name your list', 'wc_wishlist' ); ?> <abbr class="required" title="required">*</abbr></label>
 						<input required type="text" name="wishlist_title" id="wishlist_title" class="input-text" value="<?php echo esc_attr( $wishlist->post->post_title ); ?>" />
