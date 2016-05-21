@@ -10,7 +10,10 @@
   }
 
   function compare_order($a, $b) {
-    return $a['category'] - $b['category'];
+    if ($a['category'] == $b['category']) {
+            return 0;
+    }
+    return ($a['category'] < $b['category']) ? -1 : 1;
   }
 
   function theme_enqueue_styles() {

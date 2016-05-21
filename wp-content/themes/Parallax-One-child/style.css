@@ -24,6 +24,21 @@ footer {
 .db2 {
   background: pink;
 }
+.wishlist-container {
+  border: 1px solid red;
+}
+.category-section {
+  max-width: 370px;
+  max-width: 570px;
+  float: left;
+  border: 1px solid red;
+}
+.category-section:nth-child(even) {
+  clear: left;
+}
+.clear {
+  clear: both;
+}
 .tb2 {
   background: rgba(255, 255, 255, 0.75);
 }
