@@ -108,32 +108,66 @@ endif;
 						</table>
 					</div><!-- wl-row wl-clear -->
 
-          <?php
-            // My Custom ***
-            $new_product = array();
-            foreach ( $wishlist_items as $wishlist_item_key => $item ) {
-              $_product = $item['data'];
-              if ( $_product->exists() && $item['quantity'] > 0 ) {
-                $product_cats = wp_get_post_terms( $item['product_id'], 'product_cat' );
+          <div class="wishlist-container">
+            <?php
+              /**1
+              * 1. Sort item by category
+              */
+              $new_product = array();
+              foreach ( $wishlist_items as $wishlist_item_key => $item ) {
+                $_product = $item['data']; // @TODO: remove
+                if ( $_product->exists() && $item['quantity'] > 0 ) {
+                  $product_cats = wp_get_post_terms( $item['product_id'], 'product_cat' );
 
-                // Add `category` into current array.
-                $item['category'] = $product_cats[0]->name;
+                  // Add `category` into current array.
+                  $item['category'] = $product_cats[0]->name;
 
-                // Clone item into new array.
-                $new_item[] = $item;
+                  // Clone item into new array(for sorting issue).
+                  $new_item[] = $item;
+                }
               }
-            }
 
-            // Sort bu nested inside.
-            usort($new_item, 'compare_order');
+              // Sort by nested element.
+              usort($new_item, 'group_by_categroy');
 
-            // Show available wishlist items.
-            foreach ( $new_item as $key => $item ) {
-              $_product = $item['data'];
-              // printf($item['category']); //@DEBUG
-              printf( '<a href="%s" class="thumb">%s</a>', esc_url( get_permalink( apply_filters( 'woocommerce_in_cart_product_id', $item['product_id'] ) ) ), $_product->get_image() );
-            }
-          ?>
+              /**2
+              * 2. Custom sort item for left & right
+              */
+              dvm($new_item->category);
+
+              // Show available wishlist items.
+              $i = 0;
+              $cat; // ***2
+              $last_category;
+              $current_category;
+// dvm($new_item);
+              foreach ( $new_item as $key => $item ) {
+                $current_category = $item['category'];
+
+                /*if ($i == 0) {
+                  printf('<div class="category-section">');
+                }
+                if ($cat != $item['category']) {
+                  printf('</div><div class="category-section">');
+                }*/
+                printf('<div class="category-section">');
+
+                $_product = $item['data'];
+                printf( '<a href="%s" class="thumb">%s</a>', esc_url( get_permalink( apply_filters( 'woocommerce_in_cart_product_id', $item['product_id'] ) ) ), $_product->get_image() );
+                /*printf('<span class="product-remove">');
+                printf('<a href="<?php echo woocommerce_wishlist_url_item_remove( $wishlist->id, $wishlist_item_key ); ?>" class="remove wlconfirm" title="<?php _e( 'Remove this item from your wishlist', 'wc_wishlist' ); ?>" data-message="<?php esc_attr( _e( 'Are you sure you would like to remove this item from your list?', 'wc_wishlist' ) ); ?>">&times;</a>');
+                printf('</td>');*/
+
+                // Store for next round usage.
+                vd($item['category']);
+
+                $cat = $item['category'];
+                $i++;
+printf('</div><!-- .category-section -->');
+                $last_category = $item['category'];
+              }
+            ?>
+          </div>
 
 					<table class="shop_table cart wl-table manage dn" cellspacing="0">
 						<thead>

@@ -35,19 +35,6 @@ footer {
 .wishlist-container {
   .db;
 }
-.category-section {
-  max-width: 370px;
-  max-width: 570px;
-  float: left;
-  .db;
-  // clear: both;
-}
-.category-section:nth-child(even) {
-  clear: left;
-}
-.category-section:nth-child(odd) {
-  // margin-left: 200px;
-}
 .clear {
   clear: both;
 }
@@ -369,3 +356,30 @@ button#wpua-remove-existing {
 #wpua-file-existing {
   margin-bottom: 10px;
 }
+
+// --------------------------------------------------------------------------------
+// #Wish list
+
+.wishlist-container {
+
+  .category-section {
+    max-width: 370px;
+    max-width: 570px;
+    float: left;
+    .db;
+    // clear: both;
+  }
+  .category-section:first-child {
+    clear: both;
+  }
+  .category-section:nth-child(even) {
+  // clear: left;
+  }
+  .category-section:nth-child(odd) {
+    // margin-left: 200px;
+  }
+  .category-section {
+    // float: left;
+  }
+}
+

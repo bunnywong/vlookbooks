@@ -27,15 +27,6 @@ footer {
 .wishlist-container {
   border: 1px solid red;
 }
-.category-section {
-  max-width: 370px;
-  max-width: 570px;
-  float: left;
-  border: 1px solid red;
-}
-.category-section:nth-child(even) {
-  clear: left;
-}
 .clear {
   clear: both;
 }
@@ -309,4 +300,13 @@ button#wpua-remove-existing {
 }
 #wpua-file-existing {
   margin-bottom: 10px;
+}
+.wishlist-container .category-section {
+  max-width: 370px;
+  max-width: 570px;
+  float: left;
+  border: 1px solid red;
+}
+.wishlist-container .category-section:first-child {
+  clear: both;
 }

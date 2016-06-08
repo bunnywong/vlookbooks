@@ -8,8 +8,14 @@
     echo var_dump($var);
     echo '</pre>';
   }
+  function dvm($var) {
+    vd($var);
+  }
+  function vm($var) {
+    vd($var);
+  }
 
-  function compare_order($a, $b) {
+  function group_by_categroy($a, $b, $type) {
     if ($a['category'] == $b['category']) {
             return 0;
     }
