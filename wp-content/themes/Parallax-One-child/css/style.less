@@ -359,27 +359,60 @@ button#wpua-remove-existing {
 
 // --------------------------------------------------------------------------------
 // #Wish list
-
+.wl-row {
+  float: none;
+  padding-bottom: 30px;
+}
+.btn-body-io {
+  right: 100px;
+  bottom: 0px;
+  position: fixed!important;
+}
 .wishlist-container {
-
-  .category-section {
-    max-width: 370px;
-    max-width: 570px;
+  .container-left {
+    margin-left: 25px;
+  }
+  .container-left,
+  .container-right {
     float: left;
-    .db;
-    // clear: both;
+    display: inline-block;
+    max-width: 560px;
   }
-  .category-section:first-child {
-    clear: both;
+
+  .container-middle {
+    display: none;
+    .my-body {
+      bottom: 0px;
+      max-width: 410px;
+      position: fixed;
+      img {
+        display: none;
+      }
+    }
   }
-  .category-section:nth-child(even) {
-  // clear: left;
+
+  &.show {
+    .container-left {
+      margin-left: 0px;
+    }
+    .container-left,
+    .container-right {
+      max-width: 360px;
+      float: none;
+    }
+
+    .container-middle {
+      display: inline-block;
+      width: 410px;
+      .my-body {
+        max-width: 410px;
+        img {
+          display: block;
+        }
+      }
+    }
+
   }
-  .category-section:nth-child(odd) {
-    // margin-left: 200px;
-  }
-  .category-section {
-    // float: left;
-  }
+
 }
 

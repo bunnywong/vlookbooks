@@ -74,5 +74,16 @@ var vlookbooks = {
         $menu.addClass('hidden').slideUp('slow');
       }
     });
-  }
+  },
+  wishlist: function() {
+    $('.js-btn-body-io').on('click', function(e) {
+      e.preventDefault();
+        if ($('.wishlist-container').hasClass('show')) {
+          $('.wishlist-container').removeClass('show');
+        }
+        else {
+          $('.wishlist-container').addClass('show');
+        }
+    });
+  },
 }

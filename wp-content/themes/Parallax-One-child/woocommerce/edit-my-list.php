@@ -102,6 +102,7 @@ endif;
 										</select>
 									<td>
 										<button class="button small wl-but wl-add-to btn-apply"><?php _e( 'Apply Action', 'wc_wishlist' ); ?></button>
+                    <button class="fixed button small js-btn-body-io btn-body-io">My Body</button>
 									</td>
 								</tr>
 							</tbody>
@@ -133,39 +134,35 @@ endif;
               /**2
               * 2. Custom sort item for left & right
               */
-              dvm($new_item->category);
 
               // Show available wishlist items.
-              $i = 0;
-              $cat; // ***2
+              $i = $j = 0;
               $last_category;
               $current_category;
-// dvm($new_item);
-              foreach ( $new_item as $key => $item ) {
-                $current_category = $item['category'];
 
-                /*if ($i == 0) {
-                  printf('<div class="category-section">');
+              $new_item_l = array();
+              $new_item_r = array();
+
+              // Convert to left & right array.
+              foreach ($new_item as $key => $val) {
+                if($j % 2 == 0) {
+                  $new_item_l[] = $val;
                 }
-                if ($cat != $item['category']) {
-                  printf('</div><div class="category-section">');
-                }*/
-                printf('<div class="category-section">');
-
-                $_product = $item['data'];
-                printf( '<a href="%s" class="thumb">%s</a>', esc_url( get_permalink( apply_filters( 'woocommerce_in_cart_product_id', $item['product_id'] ) ) ), $_product->get_image() );
-                /*printf('<span class="product-remove">');
-                printf('<a href="<?php echo woocommerce_wishlist_url_item_remove( $wishlist->id, $wishlist_item_key ); ?>" class="remove wlconfirm" title="<?php _e( 'Remove this item from your wishlist', 'wc_wishlist' ); ?>" data-message="<?php esc_attr( _e( 'Are you sure you would like to remove this item from your list?', 'wc_wishlist' ) ); ?>">&times;</a>');
-                printf('</td>');*/
-
-                // Store for next round usage.
-                vd($item['category']);
-
-                $cat = $item['category'];
-                $i++;
-printf('</div><!-- .category-section -->');
-                $last_category = $item['category'];
+                else {
+                  $new_item_r[] = $val;
+                }
+                $j++;
               }
+
+              printf('<div class="container-left">');
+              show_wishlist_block($new_item_l);
+              printf('</div>');
+
+              printf('<div class="container-middle"><div class="my-body"><img src="/wp-content/uploads/2016/06/body_front.jpg23540994-0234-4ceb-ab8e-843eb92d1fa0Original.jpg"></div></div>');
+
+              printf('<div class="container-right">');
+              show_wishlist_block($new_item_r);
+              printf('</div>');
             ?>
           </div>
 
@@ -313,7 +310,7 @@ printf('</div><!-- .category-section -->');
 										</select>
 									</td>
 									<td>
-										<button class="button small wl-but wl-add-to btn-apply"><?php _e( 'Apply Action', 'wc_wishlist' ); ?></button>
+                    <button class="button small wl-but wl-add-to btn-apply"><?php _e( 'Apply Action', 'wc_wishlist' ); ?></button>
 									</td>
 								</tr>
 							</tbody>
@@ -431,3 +428,10 @@ printf('</div><!-- .category-section -->');
 </div>
 
 <?php do_action( 'woocommerce_wishlists_after_wrapper' ); ?>
+
+<script>
+  jQuery(document).ready(function() {
+    vlookbooks.init();
+    vlookbooks.wishlist();
+  });
+</script>

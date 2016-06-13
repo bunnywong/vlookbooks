@@ -301,12 +301,50 @@ button#wpua-remove-existing {
 #wpua-file-existing {
   margin-bottom: 10px;
 }
-.wishlist-container .category-section {
-  max-width: 370px;
-  max-width: 570px;
-  float: left;
-  border: 1px solid red;
+.wl-row {
+  float: none;
+  padding-bottom: 30px;
 }
-.wishlist-container .category-section:first-child {
-  clear: both;
+.btn-body-io {
+  right: 100px;
+  bottom: 0px;
+  position: fixed!important;
+}
+.wishlist-container .container-left {
+  margin-left: 25px;
+}
+.wishlist-container .container-left,
+.wishlist-container .container-right {
+  float: left;
+  display: inline-block;
+  max-width: 560px;
+}
+.wishlist-container .container-middle {
+  display: none;
+}
+.wishlist-container .container-middle .my-body {
+  bottom: 0px;
+  max-width: 410px;
+  position: fixed;
+}
+.wishlist-container .container-middle .my-body img {
+  display: none;
+}
+.wishlist-container.show .container-left {
+  margin-left: 0px;
+}
+.wishlist-container.show .container-left,
+.wishlist-container.show .container-right {
+  max-width: 360px;
+  float: none;
+}
+.wishlist-container.show .container-middle {
+  display: inline-block;
+  width: 410px;
+}
+.wishlist-container.show .container-middle .my-body {
+  max-width: 410px;
+}
+.wishlist-container.show .container-middle .my-body img {
+  display: block;
 }
