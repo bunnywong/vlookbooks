@@ -33,6 +33,7 @@
     $total_round = count($new_item);
 
     foreach ( $new_item as $key => $item ) {
+
       // init
       if ($i == 0) {
         printf('<div class="category-section">');
@@ -53,11 +54,27 @@
       // @DEBUG
       // vd('last: '.$last_category);
 
+      // Wrapper 1/2
+      printf('<div class="item-wrapper inline-block">');
+
+      // Item photo
       $_product = $item['data'];
       printf( '<a href="%s" class="thumb">%s</a>', esc_url( get_permalink( apply_filters( 'woocommerce_in_cart_product_id', $item['product_id'] ) ) ), $_product->get_image() );
-      /*printf('<span class="product-remove">');
-      printf('<a href="<?php echo woocommerce_wishlist_url_item_remove( $wishlist->id, $wishlist_item_key ); ?>" class="remove wlconfirm" title="<?php _e( 'Remove this item from your wishlist', 'wc_wishlist' ); ?>" data-message="<?php esc_attr( _e( 'Are you sure you would like to remove this item from your list?', 'wc_wishlist' ) ); ?>">&times;</a>');
-      printf('</td>');*/
+
+      // Item remove
+      $wishlist = new WC_Wishlists_Wishlist( $_GET['wlid'] );
+      // printf('<span class="product-remove">');
+
+      // printf(woocommerce_wishlist_url_item_remove($wishlist->id, $item['key_cloned']));
+      // printf('<a href="'.woocommerce_wishlist_url_item_remove($wishlist->id, $item['key_cloned']).'">&times;</a>');
+
+      // printf('</span>');
+
+      /*printf('<a href="<?php echo woocommerce_wishlist_url_item_remove( $wishlist->id, $wishlist_item_key ); ?>" class="remove wlconfirm" title="<?php _e( 'Remove this item from your wishlist', 'wc_wishlist' ); ?>" data-message="<?php esc_attr( _e( 'Are you sure you would like to remove this item from your list?', 'wc_wishlist' ) ); ?>">&times;</a>');*/
+
+
+      // Wrapper 2/2
+      printf('</div>');
 
       // Close tag for last round.
       if ($total_round == $i+1) {

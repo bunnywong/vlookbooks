@@ -32,9 +32,6 @@ footer {
   // display: none;
 }
 
-.wishlist-container {
-  .db;
-}
 .clear {
   clear: both;
 }
@@ -364,11 +361,25 @@ button#wpua-remove-existing {
   padding-bottom: 30px;
 }
 .btn-body-io {
+  color: white;
   right: 100px;
   bottom: 0px;
   position: fixed!important;
+  font-size: 14px;
+  text-transform: uppercase;
 }
 .wishlist-container {
+  .product-remove {
+    position: absolute;
+    left: -10px;
+    top: -80px;
+    position: relative;
+    background: white;
+    color: red;
+    // width: 5px;
+    // height: 5px;
+  }
+
   .container-left {
     margin-left: 25px;
   }
@@ -381,14 +392,38 @@ button#wpua-remove-existing {
 
   .container-middle {
     display: none;
-    .my-body {
+    .my-body-wrapper {
+      padding: 0 80px;
       bottom: 0px;
       max-width: 410px;
       position: fixed;
+
+      .my-body-inner {
+        background: lightgray;
+        -webkit-box-shadow: 1px 5px 1px 0px rgba(0,0,0,0.5);
+        -moz-box-shadow: 1px 5px 1px 0px rgba(0,0,0,0.5);
+        box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
+      }
+
+      .title {
+        text-align: center;
+      }
+
       img {
         display: none;
+
       }
     }
+  }
+
+  .category-section {
+    // .db;
+    // margin-right: 1px;
+    margin-bottom: 10px;
+    // outline: 1px solid red;
+    -webkit-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.1);
+    box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.1);
   }
 
   &.show {
@@ -404,10 +439,34 @@ button#wpua-remove-existing {
     .container-middle {
       display: inline-block;
       width: 410px;
+      .title {
+        text-align: center;
+        padding-top: 10px;
+        font-weight: 600;
+      }
+
       .my-body {
         max-width: 410px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        position: relative;
+
         img {
           display: block;
+          max-width: 90%;
+          margin: 0 auto 10px auto;
+        }
+        .btn-wrapper {
+          width: 220px;
+          margin: 20px auto 5px 20px;
+          margin: 0 auto;
+        }
+        .btn-wrapper button {
+          width: 100px;
+          color: white;
+          background: red;
+          padding: 10px;
+          margin: 5px;
         }
       }
     }
@@ -415,4 +474,16 @@ button#wpua-remove-existing {
   }
 
 }
+.page-wishlist #content {
+  margin-bottom: 50px; // For ensure show body I/O btn
+}
 
+.inline-block {
+  display: inline-block;
+}
+
+// TEMP for demo
+.wl-row,
+.shop_table {
+  display: none;
+}

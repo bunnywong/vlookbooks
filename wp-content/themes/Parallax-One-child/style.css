@@ -24,9 +24,6 @@ footer {
 .db2 {
   background: pink;
 }
-.wishlist-container {
-  border: 1px solid red;
-}
 .clear {
   clear: both;
 }
@@ -306,9 +303,20 @@ button#wpua-remove-existing {
   padding-bottom: 30px;
 }
 .btn-body-io {
+  color: white;
   right: 100px;
   bottom: 0px;
   position: fixed!important;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.wishlist-container .product-remove {
+  position: absolute;
+  left: -10px;
+  top: -80px;
+  position: relative;
+  background: white;
+  color: red;
 }
 .wishlist-container .container-left {
   margin-left: 25px;
@@ -322,13 +330,29 @@ button#wpua-remove-existing {
 .wishlist-container .container-middle {
   display: none;
 }
-.wishlist-container .container-middle .my-body {
+.wishlist-container .container-middle .my-body-wrapper {
+  padding: 0 80px;
   bottom: 0px;
   max-width: 410px;
   position: fixed;
 }
-.wishlist-container .container-middle .my-body img {
+.wishlist-container .container-middle .my-body-wrapper .my-body-inner {
+  background: lightgray;
+  -webkit-box-shadow: 1px 5px 1px 0px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 1px 5px 1px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.wishlist-container .container-middle .my-body-wrapper .title {
+  text-align: center;
+}
+.wishlist-container .container-middle .my-body-wrapper img {
   display: none;
+}
+.wishlist-container .category-section {
+  margin-bottom: 10px;
+  -webkit-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.1);
 }
 .wishlist-container.show .container-left {
   margin-left: 0px;
@@ -342,9 +366,41 @@ button#wpua-remove-existing {
   display: inline-block;
   width: 410px;
 }
+.wishlist-container.show .container-middle .title {
+  text-align: center;
+  padding-top: 10px;
+  font-weight: 600;
+}
 .wishlist-container.show .container-middle .my-body {
   max-width: 410px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
 }
 .wishlist-container.show .container-middle .my-body img {
   display: block;
+  max-width: 90%;
+  margin: 0 auto 10px auto;
+}
+.wishlist-container.show .container-middle .my-body .btn-wrapper {
+  width: 220px;
+  margin: 20px auto 5px 20px;
+  margin: 0 auto;
+}
+.wishlist-container.show .container-middle .my-body .btn-wrapper button {
+  width: 100px;
+  color: white;
+  background: red;
+  padding: 10px;
+  margin: 5px;
+}
+.page-wishlist #content {
+  margin-bottom: 50px;
+}
+.inline-block {
+  display: inline-block;
+}
+.wl-row,
+.shop_table {
+  display: none;
 }

@@ -102,14 +102,13 @@ endif;
 										</select>
 									<td>
 										<button class="button small wl-but wl-add-to btn-apply"><?php _e( 'Apply Action', 'wc_wishlist' ); ?></button>
-                    <button class="fixed button small js-btn-body-io btn-body-io">My Body</button>
 									</td>
 								</tr>
 							</tbody>
 						</table>
 					</div><!-- wl-row wl-clear -->
 
-          <div class="wishlist-container">
+          <div class="wishlist-container @debug- show">
             <?php
               /**1
               * 1. Sort item by category
@@ -122,6 +121,7 @@ endif;
 
                   // Add `category` into current array.
                   $item['category'] = $product_cats[0]->name;
+                  $item['key_cloned'] = $wishlist_item_key;
 
                   // Clone item into new array(for sorting issue).
                   $new_item[] = $item;
@@ -130,7 +130,6 @@ endif;
 
               // Sort by nested element.
               usort($new_item, 'group_by_categroy');
-
               /**2
               * 2. Custom sort item for left & right
               */
@@ -158,7 +157,7 @@ endif;
               show_wishlist_block($new_item_l);
               printf('</div>');
 
-              printf('<div class="container-middle"><div class="my-body"><img src="/wp-content/uploads/2016/06/body_front.jpg23540994-0234-4ceb-ab8e-843eb92d1fa0Original.jpg"></div></div>');
+              printf('<div class="container-middle"><div class="my-body-wrapper"><div class="my-body-inner"><div class="title">Drag items to model</div><div class="my-body"><img src="/wp-content/uploads/2016/06/body_front-1.jpg23540994-0234-4ceb-ab8e-843eb92d1fa0Original-1.jpg"><div class="btn-wrapper"><button>Save</button><button>Reset</button></div></div></div></div></div>');
 
               printf('<div class="container-right">');
               show_wishlist_block($new_item_r);
@@ -427,11 +426,17 @@ endif;
 	<?php woocommerce_wishlists_get_template( 'wishlist-email-form.php', array('wishlist' => $wishlist) ); ?>
 </div>
 
+<button class="fixed button small js-btn-body-io btn-body-io">Body</button>
+
 <?php do_action( 'woocommerce_wishlists_after_wrapper' ); ?>
 
 <script>
   jQuery(document).ready(function() {
     vlookbooks.init();
     vlookbooks.wishlist();
+
+    $('body').addClass('-m');
   });
+
 </script>
+
