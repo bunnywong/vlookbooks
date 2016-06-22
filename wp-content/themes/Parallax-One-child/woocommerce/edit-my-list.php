@@ -435,7 +435,7 @@ endif;
     vlookbooks.init();
     vlookbooks.wishlist();
 
-    $('body').addClass('-m');
+    $('body').addClass('page-wishlist-edit-a-list');
   });
 
 </script>
