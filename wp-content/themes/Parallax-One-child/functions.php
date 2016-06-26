@@ -3,6 +3,9 @@
    * Child theme init
    */
 
+   /**
+   * Debug tool
+   */
   function vd($var) {
     echo '<pre>';
     echo var_dump($var);
@@ -14,6 +17,53 @@
   function vm($var) {
     vd($var);
   }
+
+// ================================================================================
+  /**
+   * Woocommerce
+   */
+
+  /*
+  * - Product detail movemnent: Description
+  */
+
+  /* Remove # in old position */
+
+  // #description
+  remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+
+  // #buttons
+  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+
+  // #default & custom fields
+  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+
+  /* Update % to new position */
+
+  // %description
+  add_action( 'woocommerce_single_product_summary', 'woocommerce_output_product_data_tabs', 60 );
+
+  // %Add to cart button
+  add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 99 );
+
+  // %default & custom fields
+  add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 25 );
+  add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 20 );
+
+
+
+  /*
+  * - Product detail: Change add to cart text
+  */
+  function woo_custom_cart_button_text() {
+    return __( 'Add to shopping Bag', 'woocommerce' );
+  }
+
+  add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
+
+// ================================================================================
 
   function group_by_categroy($a, $b, $type) {
     if ($a['category'] == $b['category']) {
