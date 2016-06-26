@@ -24,44 +24,56 @@
    */
 
   /*
-  * - Product detail movemnent: Description
-  */
-
-  /* Remove # in old position */
-
-  // #description
-  remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
-
-  // #buttons
-  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
-
-  // #default & custom fields
-  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
-
-
-  /* Update % to new position */
-
-  // %description
-  add_action( 'woocommerce_single_product_summary', 'woocommerce_output_product_data_tabs', 60 );
-
-  // %Add to cart button
-  add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 99 );
-
-  // %default & custom fields
-  add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 25 );
-  add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 20 );
-
-
-
-  /*
   * - Product detail: Change add to cart text
   */
   function woo_custom_cart_button_text() {
     return __( 'Add to shopping Bag', 'woocommerce' );
   }
 
-  add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
+  add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );
+
+  /*
+  * - Product detail movemnent: Description
+  */
+
+  // Custom template render
+  function custom_woocommerce_output_product_data_description() {
+    wc_get_template( 'single-product/tabs/description.php' );
+  }
+
+  /* 1. Remove # in old position */
+
+  // #title
+  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+  // #description
+  remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+  // #buttons
+  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 30 );
+  // #default & custom fields
+  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+  remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+
+  // Button @TODO
+  // remove_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 30 );
+  // add_action( 'woocommerce_simple_add_to_cart', 'woocommerce_simple_add_to_cart', 40 );
+
+
+
+
+  /* 2. Update % to new position */
+
+  add_action( 'woocommerce_before_single_product_summary', 'woocommerce_template_single_title', 5 );
+
+  // %description
+  add_action( 'woocommerce_single_product_summary', 'custom_woocommerce_output_product_data_description', 60 );
+  // %Add to cart button
+  add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 99 );
+  // %default & custom fields
+  add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 25 );
+  add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 20 );
+
+
+
 
 // ================================================================================
 
