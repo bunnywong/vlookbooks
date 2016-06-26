@@ -58,6 +58,15 @@ body.single-product .thumbnails a {
 body.single-product .thumbnails a.first {
   clear: none!important;
 }
+body.single-product .entry-summary {
+  padding: 0 20px;
+}
+body.single-product .entry-summary form {
+  width: 100%;
+}
+body.single-product .entry-summary .single_add_to_cart_button {
+  width: 280px;
+}
 body.single-product .product_meta span.sku_wrapper,
 body.single-product .posted_in {
   font-weight: 600;
