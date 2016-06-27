@@ -42,4 +42,3 @@
 
   </div>
   <!-- /END COLOR OVER IMAGE -->
-</header>
