@@ -84,3 +84,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div><!-- #product-<?php the_ID(); ?> -->
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
+
+<script>
+  jQuery(document).ready(function() {
+    vlookbooks.init();
+    vlookbooks.productDetail();
+  });
+</script>

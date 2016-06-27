@@ -86,4 +86,7 @@ var vlookbooks = {
         }
     });
   },
+  productDetail: function() {
+    $('.thumbnails').bxSlider();
+  },
 }

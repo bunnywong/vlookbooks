@@ -50,13 +50,29 @@ body.single-product .related-products-container {
 body.single-product h1.product_title:after {
   background: none!important;
 }
-body.single-product .thumbnails a {
-  width: 25%!important;
+body.single-product .thumbnails .slide-wrapper {
+  width: 375px;
+  height: auto;
+}
+body.single-product .thumbnails .slide-wrapper a {
   margin-right: 0!important;
+  width: 100%!important;
   border: 1px solid #666;
 }
-body.single-product .thumbnails a.first {
+body.single-product .thumbnails .slide-wrapper a.first {
   clear: none!important;
+}
+body.single-product .bx-wrapper .bx-controls-direction a {
+  top: 60px;
+}
+body.single-product .bx-wrapper .bx-controls-direction a.bx-prev {
+  left: -25px;
+}
+body.single-product .bx-wrapper .bx-controls-direction a.bx-next {
+  right: -15px;
+}
+body.single-product .wl-list-pop {
+  display: none!important;
 }
 body.single-product .entry-summary {
   padding: 0 20px;
