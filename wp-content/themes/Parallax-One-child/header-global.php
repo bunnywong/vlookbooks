@@ -11,7 +11,7 @@
     	</div>
     	<!-- /END COLOR OVER IMAGE -->
     </header>
-    <div class="container-fluid custom-header">
+    <div class="container-fluid custom-header master">
       <div class="menu">
           <button type="button" class="navbar-toggle js-menu-io">
             <span class="icon-bar"></span>

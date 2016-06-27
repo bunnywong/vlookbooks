@@ -19,6 +19,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
+// get_header('global');
+get_header('feeder');
 ?>
 
 <?php

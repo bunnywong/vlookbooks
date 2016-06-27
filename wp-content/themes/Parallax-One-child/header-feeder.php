@@ -1,4 +1,4 @@
-<div class="container-fluid custom-header feeder">
+<div class="container-fluid custom-header second feeder">
   <div class="menu-item"><a href="profile">vKennth</a></div>
   <div class="menu-item"><a href="vcloset">vCloset</a></div>
   <div class="menu-item"><a href="shop">vShop</a></div>

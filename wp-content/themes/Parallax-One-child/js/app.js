@@ -87,6 +87,12 @@ var vlookbooks = {
     });
   },
   productDetail: function() {
+    // Reposition menu
+    $('.custom-header.second').insertAfter('header');
+    // $('.custom-header.master').insertBefore('.custom-header.second');
+
+
     $('.thumbnails').bxSlider();
+
   },
 }
