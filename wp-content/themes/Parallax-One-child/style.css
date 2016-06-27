@@ -41,6 +41,9 @@ body.single-product .wl-add-to {
 body.single-product .wl-add-to {
   width: 100%;
 }
+body.single-product .ppt {
+  display: none!important;
+}
 body.single-product .images,
 body.single-product .summary,
 body.single-product .related-products-container {
