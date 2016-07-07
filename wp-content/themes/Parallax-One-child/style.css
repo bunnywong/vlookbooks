@@ -27,6 +27,9 @@ footer {
 .clear {
   clear: both;
 }
+.abs {
+  position: absolute;
+}
 .tb2 {
   background: rgba(255, 255, 255, 0.75);
 }
@@ -120,6 +123,89 @@ body.single-product .related.products .products li a {
 }
 body.single-product .related.products .wp-post-image {
   margin: 0;
+}
+body.page-favorite-brand #primary {
+  margin-top: 0;
+}
+body.page-favorite-brand .common-hover-bg {
+  display: block!important;
+  visibility: visible!important;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+body.page-favorite-brand .main-row > div {
+  padding: 0!important;
+}
+body.page-favorite-brand .img-wrapper:hover .hover-bg {
+  display: block!important;
+  visibility: visible!important;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+body.page-favorite-brand .img-left_wrapper .hover-bg {
+  font-size: 50px;
+  color: white!important;
+}
+body.page-favorite-brand .img-left_wrapper .hover-bg img {
+  display: block;
+  max-width: 200px;
+  margin: 100px auto 0 auto;
+}
+body.page-favorite-brand .img-wrapper {
+  position: relative;
+}
+body.page-favorite-brand .img-wrapper.left .hover-bg {
+  display: block!important;
+  visibility: visible!important;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+}
+body.page-favorite-brand .img-left_wrapper {
+  float: right;
+  position: relative;
+}
+body.page-favorite-brand .img_middle-bottom {
+  width: 370px;
+}
+body.page-favorite-brand .logo-wrapper {
+  background: #62d3d0;
+  padding: 20px;
+}
+body.page-favorite-brand .logo-wrapper img {
+  margin: 0 auto;
+  display: block;
+  margin-top: 10px;
+  position: relative;
+}
+body.page-favorite-brand .col3 img,
+body.page-favorite-brand .col4 img,
+body.page-favorite-brand .col5 img,
+body.page-favorite-brand .col6 img {
+  max-height: 60px;
+}
+body.page-favorite-brand .col1 img,
+body.page-favorite-brand .col2 img,
+body.page-favorite-brand .col7 img,
+body.page-favorite-brand .col8 img,
+body.page-favorite-brand .col9 img {
+  max-width: 70px;
+}
+body.page-favorite-brand .col1 > div:last-child img {
+  top: 20px;
+}
+body.page-favorite-brand .logo-plus {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
 }
 body.page-wishlist-edit-a-list .wl-row {
   float: none;

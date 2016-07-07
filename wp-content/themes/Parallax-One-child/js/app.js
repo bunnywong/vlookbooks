@@ -95,4 +95,7 @@ var vlookbooks = {
     $('.thumbnails').bxSlider();
 
   },
+  favoriteBrand: function() {
+    $('body').addClass('page-favorite-brand');
+  }
 }
