@@ -97,5 +97,9 @@ var vlookbooks = {
   },
   favoriteBrand: function() {
     $('body').addClass('page-favorite-brand');
+
+    $('.js-logo-plus').on('click', function() {
+      // enable lightbox
+    })
   }
 }

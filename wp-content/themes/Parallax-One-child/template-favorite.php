@@ -124,7 +124,7 @@
 
                 <div class="row col10">
                   <div class="col-sm-12 ">
-                    <div class="js-logo-plus logo-plus">
+                    <div class="js-logo-plus logo-plus" data-toggle="modal" data-target=".modal-favorite-brand">
                       <img src="/wp-content/uploads/2016/02/logo-plus.png">
                     </div>
                   </div>
@@ -150,6 +150,23 @@
 
 <?php get_footer(); ?>
 <?php get_footer('global'); ?>
+
+<div class="modal fade modal-favorite-brand" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content text-center">
+      <div class="row">
+        <h2>Edit Favorite</h2>
+        <div class="col-sm-4 left">
+          <input value="Search">
+          <button>Add to Favorite</button>
+        </div>
+        <div class="col-sm-8">table</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 
 

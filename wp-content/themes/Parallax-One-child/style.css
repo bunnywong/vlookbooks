@@ -207,6 +207,25 @@ body.page-favorite-brand .logo-plus {
   right: 10px;
   bottom: 0;
 }
+body.page-favorite-brand .modal-favorite-brand input {
+  font-size: 20px;
+  text-indent: 5px;
+  background: gray;
+  width: 100%;
+  height: 50px;
+}
+body.page-favorite-brand .modal-favorite-brand button {
+  font-size: 12px;
+  margin-top: 10px;
+  color: white;
+  background: orange;
+  width: auto;
+  padding: 10px;
+  float: left;
+}
+body.page-favorite-brand .modal-favorite-brand .modal-content {
+  background: lightgray;
+}
 body.page-wishlist-edit-a-list .wl-row {
   float: none;
   padding-bottom: 30px;
